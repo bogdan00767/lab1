@@ -11,7 +11,7 @@ int main() {
 
     try {
         auto start = chrono::steady_clock::now();
-        WordCounter counter;
+        WordCounter2 counter;
         
         counter.processFile(fileName);
         counter.printResults();
