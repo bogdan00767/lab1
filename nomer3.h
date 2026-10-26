@@ -6,7 +6,9 @@
 #include <algorithm>
 #include <string>
 
-// helper func to check if number is prime
+/// @brief check if a number is prime
+/// @param n number to check
+/// @return true if n is prime
 inline bool isPrime(int n) {
     if (n <= 1) return false;
     for (int i = 2; i * i <= n; ++i) {
@@ -20,7 +22,8 @@ private:
 
 public:
 
-    // nomer 3a. check for prime numbers and make them square
+    /// @brief replace every prime number with its square
+    /// @param vec vector to change
     void processPrimes(std::vector<int>& vec) {
         // std::transform modifies every element in range using lambda function
         std::transform(vec.begin(), vec.end(), vec.begin(), [](int val) {
@@ -31,7 +34,8 @@ public:
         });
     }
 
-    // nomer 3b. sort: first %2 = 0 from the least, then %2! = 0 from the highest
+    /// @brief sort: odd numbers first (small to big), then even numbers (big to small)
+    /// @param vec vector to sort
     void customSort(std::vector<int>& vec) {
         // std::sort with custom comparator logic
         std::sort(vec.begin(), vec.end(), [](int a, int b) {
@@ -50,7 +54,11 @@ public:
         });
     }
 
-    // nomer 3c. find numbers in range and make unique array
+    /// @brief find unique numbers in range, sorted
+    /// @param vec source vector
+    /// @param minVal low bound (included)
+    /// @param maxVal high bound (included)
+    /// @return unique sorted numbers in range
     std::vector<int> findUniqueInRange(const std::vector<int>& vec, int minVal, int maxVal) {
         std::vector<int> temp;
 
@@ -69,7 +77,9 @@ public:
         return temp;
     }
 
-    // helper to print vector
+    /// @brief print vector as "message: v1 v2 ..."
+    /// @param vec vector to print
+    /// @param message text before values
     void printVector(const std::vector<int>& vec, const std::string& message) const {
         std::cout << message << ": ";
         for (int val : vec) {
