@@ -15,6 +15,7 @@ std::string WordCounter2::cleanWord(const std::string& input) {
 }
 
 // reading file, making indexing
+
 void WordCounter2::processFile(const std::string& fileName) {
     std::ifstream file(fileName);
 
